@@ -17,13 +17,15 @@ const galleryList = document.querySelector(".gallery");
 const elements = images.map(element => {
   const itemEll = document.createElement('li');
   itemEll.classList.add('item-gallery');
-  const imgEll = document.createElement('img');
-  imgEll.src = element.url;
-  imgEll.alt = element.alt;
-  imgEll.width = 100;
-  imgEll.classList.add('images');
-  itemEll.appendChild(imgEll);
-  console.log(itemEll);
+  // const imgEll = document.createElement('img');
+  // imgEll.src = element.url;
+  // imgEll.alt = element.alt;
+  // imgEll.width = 100;
+  // imgEll.classList.add('image');
+  // itemEll.appendChild(imgEll);
+  // console.log(itemEll);
+  itemEll.insertAdjacentHTML('beforeend', `<img class=image 
+  alt = "${element.alt}" src = "${element.url}" width=100 ></img>`);
   return itemEll;
 });
 galleryList.append(...elements);
